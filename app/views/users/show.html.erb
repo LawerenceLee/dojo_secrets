@@ -1,0 +1,21 @@
+<br>
+<%= link_to "Edit Profile", "/users/#{current_user.id}/edit" %>
+<h1><%= current_user.name %> User ID: <%= current_user.id %></h1>
+<br>
+
+<%= form_for :secret, url: "/secrets" do |f| %>
+    <p>Secret: <%= f.text_field :content %></p>
+    <%= submit_tag "Create Secret" %>
+<% end %>
+<br>
+
+<% current_user.secrets.each do |secret| %>
+    <p><%= secret.content %></p>
+    <% if current_user == secret.user %>
+        <form action="/secrets/<%= secret.id %>" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete Secret">
+        </form>
+    <% end %>
+<% end %>

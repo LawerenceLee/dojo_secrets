@@ -1,0 +1,5 @@
+<%= form_for current_user, url: "/users/#{current_user.id}" do |f| %>
+    <p>Name: <%= f.text_field :name %></p>
+    <p>Email: <%= f.text_field :email %></p>
+    <%= submit_tag "Update" %>
+<% end %>
