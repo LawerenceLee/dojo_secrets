@@ -22,14 +22,10 @@ def install_rvm():
 
 
 def install_ror():
-    print("Installing Ruby 2.3.1")
-    os.system('rvm install 2.3.1')
-    print("\n\nSetting version 2.3.1 as default")
-    os.system("rvm use 2.3.1 --default")
-    print("\n\nInstalling Ruby Gems")
-    os.system("rvm rubygems current --force")
-    print("\n\nInstalling Rails")
-    os.system("gem install rails -v 4.2.7 --no-ri --no-rdoc")
+    print('run $ rvm install 2.3.1')
+    print("run $ rvm use 2.3.1 --default")
+    print("run $ rvm rubygems current --force")
+    print("run $ gem install rails -v 4.2.7 --no-ri --no-rdoc")
 
 
 def main():
